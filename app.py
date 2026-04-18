@@ -496,7 +496,6 @@ def sidebar_controls() -> str:
 
     return mode
 
-
 def page_home_real_data() -> None:
     metric_card_row(
         [
@@ -506,17 +505,56 @@ def page_home_real_data() -> None:
         ]
     )
 
+    st.markdown(
+        "CysSelect is a browser-based research app for analyzing covalent fragment "
+        "chemoproteomic screening data. It helps users identify liganded cysteines, "
+        "compare enantiomer-specific behavior, prioritize higher-quality hits, explore "
+        "simulated benchmark datasets, and rank virtual compounds for next-round library design."
+    )
+
+    st.info(
+        "CysSelect is intended for research, method development, and educational use. "
+        "Its outputs are computational summaries and prioritization aids, and should be "
+        "interpreted alongside experimental validation and scientific judgment."
+    )
+
     c1, c2, c3 = st.columns(3)
-    c1.info("Upload a chemoproteomic screen")
-    c2.info("Run hit calling and enantiomer comparison")
-    c3.info("Prioritize sweet-spot fragment pairs")
+    c1.info(
+        "**Upload and analyze screening data**\n\n"
+        "Import chemoproteomic results, check data quality, and compute core metrics such as CR, AUC, and ΔAUC."
+    )
+    c2.info(
+        "**Compare enantiomers and rank hits**\n\n"
+        "Evaluate R and S enantiomer behavior, identify stereoselective interactions, and summarize pair-level promiscuity and selectivity."
+    )
+    c3.info(
+        "**Simulate and design better libraries**\n\n"
+        "Generate benchmark datasets, stress-test thresholds, and score virtual compound libraries to guide next-round selection."
+    )
 
     st.subheader("Expected input")
+    st.markdown(
+        "CysSelect accepts tabular chemoproteomic screening data with required identifiers "
+        "for compound pair, enantiomer, cysteine site, concentration, replicate, and control versus treatment intensities."
+    )
     st.code(", ".join(REQUIRED_COLUMNS_REAL), language="text")
 
-    st.subheader("Optional columns")
+    st.subheader("Optional annotation fields")
+    st.markdown(
+        "Additional fields such as p-value, protein identifier, gene name, and scaffold cluster "
+        "can improve interpretation, filtering, and prioritization."
+    )
     st.code(", ".join(OPTIONAL_COLUMNS_REAL), language="text")
 
+    st.subheader("What you can do in CysSelect")
+    st.markdown(
+        "- Upload and quality-check chemoproteomic screening tables\n"
+        "- Call liganded and enantioselective hits\n"
+        "- Summarize pair-level promiscuity and stereoselectivity\n"
+        "- Identify sweet-spot fragment pairs\n"
+        "- Explore simulated benchmark datasets\n"
+        "- Score virtual libraries for next-round design"
+    )
 
 def page_upload_qc() -> None:
     st.header("Upload and QC")
