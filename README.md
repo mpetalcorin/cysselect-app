@@ -140,5 +140,4 @@ CysSelect is intended for research, method development, and educational use. App
 MIT
 
 ## Citation
-**Petalcorin, M.I.R.** (2026). CysSelect: a browser-based platform for chemoproteomic hit calling, enantiomer comparison, simulation, and next-library design for covalent fragment discovery. 
-https://github.com/mpetalcorin/cysselect-app
+**Petalcorin, M.I.R.** (2026). CysSelect: a browser-based platform for chemoproteomic hit calling, enantiomer comparison, simulation, and next-library design for covalent fragment discovery. chemRxiv. 1026434 (15002285/v1), 1-12.  https://doi.org/10.26434/chemrxiv.15002285/v1
